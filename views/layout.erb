@@ -2,14 +2,33 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/css/reset.css">
-    <link rel="stylesheet" href="/css/stylesheet.css">
+    <!-- <link rel="stylesheet" href="/css/reset.css"> -->
+    <!-- <link rel="stylesheet" href="/css/stylesheet.css"> -->
+    <link rel="stylesheet" type="text/css" href="/css/app.css">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <title>HAIKU</title>
   </head>
   <body>
-    <!-- NAV BAR IF USER IS LOGGED IN -->
+
     <% if session[:user_id] %>
-      <nav>
+
+<h1>YOUR SPORTS BLOG</h1>
+  <ul class="topnav" id="myTopnav">
+    <li><a href="/home">Home</a><li>
+    <li><a href="/profile"><%= current_user.name.upcase %>Profile</a></li>
+    <li><a href="/settings">Settings</a></li>
+    <li><a href="/sign_in_out">Sign in/out</a></li>
+    <li><a href="/edit_profile">Edit Profile</a></li>
+    <li><a href="/post">Post</a></li>
+    <li class="icon">
+      <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
+    </li>
+  </ul>
+    <% end %>
+
+
+    <!-- NAV BAR IF USER IS LOGGED IN -->
+<!--       <nav>
         <div id="nav_logo">
           <a href="/home">HAIKU</a>
         </div>
@@ -18,7 +37,7 @@
             <li><h4>HOME</h4></li>
           </a>
           <a href="/profile">
-            <li><h4><%= current_user.name.upcase %></h4></li>
+            <li><h4></h4></li>
           </a>
           <a href="/write">
             <li><h4>WRITE</h4></li>
@@ -30,10 +49,11 @@
             <li><h4>SIGN OUT</h4></li>
           </a>
         </ul>
-      </nav>
-    <% end %>
+      </nav> -->
+
+    <script src="/js/app.js"></script>
     <!-- ERB INSERTION POINT -->
     <%= yield %>
    
-  </body>
+</body>
 </html>

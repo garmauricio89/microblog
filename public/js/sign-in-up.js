@@ -13,6 +13,11 @@ $( ".button.enter" ).click(function() {
   }, 1000 );
 });
 
+
+$(".button-collapse").sideNav();
+
+
+
 // $( "#landing" ).click(function() {
 //   $( "#landing" ).animate({
 //     right: "0px",
@@ -25,4 +30,4 @@ $( ".button.enter" ).click(function() {
 //     $( "#sign" ).remove();
 //   }, 1000);
 // });
-Contact GitHub API Training Shop Blog About
+// Contact GitHub API Training Shop Blog About
