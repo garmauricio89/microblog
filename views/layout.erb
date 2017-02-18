@@ -17,9 +17,11 @@
     <li><a href="/home">Home</a><li>
     <li><a href="/profile"><%= current_user.name.upcase %>Profile</a></li>
     <li><a href="/settings">Settings</a></li>
-    <li><a href="/sign_in_out">Sign in/out</a></li>
-    <li><a href="/edit_profile">Edit Profile</a></li>
-    <li><a href="/post">Post</a></li>
+    <li><a href="/sign_in">Sign in/out</a></li>
+    <li><a href="/sign_up">Sign up</a></li>
+    <li><a href="/edit">Edit Profile</a></li>
+   <!--  <li><a href="/landing1">landing1</a></li> -->
+    <li><a href="/write">Write</a></li>
     <li class="icon">
       <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
     </li>
@@ -52,6 +54,9 @@
       </nav> -->
 
     <script src="/js/app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="js/sign-in-up.js"></script>
     <!-- ERB INSERTION POINT -->
     <%= yield %>
    
