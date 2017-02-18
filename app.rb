@@ -59,8 +59,7 @@ post "/sign-in" do
 
     redirect "/home"
   else
-    flash[:error] = "Sorry, your email and password do not match."
-
+    
     redirect "/"
   end
 end
@@ -133,7 +132,7 @@ post "/settings" do
     current_user.update(
     password: params[:new_password]
     )
-   
+
   end
 
   redirect back
@@ -163,50 +162,9 @@ post "/write" do
   Post.create(
     line1: params[:line1],
     user_id: current_user.id,
-    likes: 0
+  
   )
 
   redirect "/profile"
 end
 
-# ============================================================
-#   EDIT/DELETE POSTS
-# ============================================================
-get "/edit/:id" do
-  @post = Post.find(params[:id])
-
-  if session[:user_id]
-    erb :edit
-  else
-    redirect "/"
-  end
-end
-
-post "/edit/:id" do
-  @post = Post.find(params[:id])
-  @post.update(
-    line1: params[:line1],
-  )
-  redirect "/profile"
-end
-
-get "/delete/:id" do
-  @post = Post.find(params[:id])
-  @post.destroy
-
-  redirect back
-end
-
-# ============================================================
-#   LIKE
-# ============================================================
-get "/like/:id" do
-  @post = Post.find(params[:id])
-  @post.update(likes: @post.likes + 1)
-
-  redirect back
-end
-
-# ============================================================
-#   FOLLOWING
-# ============================================================

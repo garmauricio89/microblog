@@ -1,22 +1,16 @@
 <div id="wrapper"> 
   <header id="home">
-    <h2>RECENT HAIKU</h2>
+    <h2>RECENT POST</h2>
   </header>
   <section id="container">
     <!-- NO POSTS YET MSG -->
     <% if @posts.length == 0 %>
       <div class="haiku_box">
         <div class="haiku_top"> 
-          <p>Alas, no haiku</p>
-          <p>Write something for you and me</p>
-          <p>Words will flow with time</p>
+          
         </div>
         <div class="haiku_bottom">
-          <div class="like_counter">
-            <div class="like_button">
-              <img src="/images/swan.svg">
-            </div>
-          </div>
+          
         </div>
       </div>
     <% end %>
@@ -35,24 +29,10 @@
               <%= post.user.name.upcase %>
             </a>
           </h3>
-          <div class="like_counter">
-            <div class="like_button">
-              <a href="/like/<%= post.id %>"><img src="/images/swan.svg"></a>
-            </div>
-            <% if post.likes != 0 %>
-              <div class="like_num">
-                <%= post.likes %>
-              </div>
-            <% end %>
-          </div>
+          
         </div>
-        <!-- EDIT CORNER / IF CURRENT USER OWNS POST -->
-        <% if current_user.id == post.user.id %>
-          <div class="edit_corner">
-            <a href="/edit/<%= post.id %>"><img src="/images/pencil.svg"></a>
-            <a href="/delete/<%= post.id %>"><img src="/images/delete.svg"></a>
-          </div>
-        <% end %>
+        
+
       </div>
     <% end %>
   </section>
