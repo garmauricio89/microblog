@@ -7,11 +7,12 @@
     <h1 class="text">  WRITE SOMETHING</h1>
       
     <% end %>
-   
+   <div class="fade">
+
     <% @posts.reverse.each do |post| %>
       
           <p class="text"><%= post.line1 %></p>
-          
+    </div>
           
         
     <% end %>

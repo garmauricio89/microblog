@@ -9,16 +9,16 @@
     <% end %>
     
     <% @posts.reverse.each do |post| %>
-      
+        <div class="fade">
           <p class="text"><%= post.line1 %></p>
           
         
           <h3 class="text">
             <a href="/profile/<%= post.user.id %>">
-              <%= post.user.name.upcase %>
+             By: <%= post.user.name.upcase %>
             </a>
           </h3>
-          
+        </div>
         
     <% end %>
   

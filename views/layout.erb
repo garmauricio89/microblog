@@ -2,12 +2,12 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <title>SPORTS</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/reset.css">
-   
-    <title>Join the chat!</title>
   </head>
   <body>
-   
+   <header>
     <% if session[:user_id] %>
       <nav class="text">
         <div id="nav_logo">
@@ -30,10 +30,25 @@
             <li><h4>SIGN OUT</h4></li>
           </a>
         </ul>
-      </nav>
+      </nav><br />
     <% end %>
+    </header>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4"><%= yield %></div>
+        <div class="col-sm-4"></div>
+      </div>
+    </div>
+
+
     
-    <%= yield %>
+    
    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="css/main.js"></script>
+
+
+
   </body>
 </html>
