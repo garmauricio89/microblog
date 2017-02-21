@@ -1,40 +1,25 @@
-<div id="wrapper"> 
-  <header id="home">
-    <h2>RECENT POST</h2>
-  </header>
-  <section id="container">
-    <!-- NO POSTS YET MSG -->
+
+ 
+    <h2 class="text">RECENT POST</h2>
+ 
+
+    
     <% if @posts.length == 0 %>
-      <div class="haiku_box">
-        <div class="haiku_top"> 
-          
-        </div>
-        <div class="haiku_bottom">
-          
-        </div>
-      </div>
+      
     <% end %>
-    <!-- POST MODULE -->
+    
     <% @posts.reverse.each do |post| %>
-      <div class="haiku_box">
-        <!-- HAIKU -->
-        <div class="haiku_top"> 
-          <p><%= post.line1 %></p>
+      
+          <p class="text"><%= post.line1 %></p>
           
-        </div>
-        <!-- HAIKU INFO -->
-        <div class="haiku_bottom">
-          <h3>
+        
+          <h3 class="text">
             <a href="/profile/<%= post.user.id %>">
               <%= post.user.name.upcase %>
             </a>
           </h3>
           
-        </div>
         
-
-      </div>
     <% end %>
-  </section>
-</div>
+  
 

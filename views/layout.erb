@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/css/reset.css">
-    <link rel="stylesheet" href="/css/stylesheet.css">
+   
     <title>Join the chat!</title>
   </head>
   <body>
-    <!-- NAV BAR IF USER IS LOGGED IN -->
+   
     <% if session[:user_id] %>
-      <nav>
+      <nav class="text">
         <div id="nav_logo">
           <a href="/home">Join the chat!</a>
         </div>
@@ -32,7 +32,7 @@
         </ul>
       </nav>
     <% end %>
-    <!-- ERB INSERTION POINT -->
+    
     <%= yield %>
    
   </body>

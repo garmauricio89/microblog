@@ -1,27 +1,18 @@
-<div id="wrapper">
-  <header id="profile">
-    <h2><%= @user.name.upcase %></h2>
+
+    <h2 class="text"><%= @user.name.upcase %></h2>
   
-  </header>
-  <section id="container">
+  
     
     <% if @posts.length == 0 %>
-    <h1>  WRITE SOMETHING</h1>
+    <h1 class="text">  WRITE SOMETHING</h1>
       
     <% end %>
    
     <% @posts.reverse.each do |post| %>
-      <div class="haiku_box">
-        
-        <div class="haiku_top"> 
-          <p><%= post.line1 %></p>
+      
+          <p class="text"><%= post.line1 %></p>
           
           
-        </div>
         
-        
-      </div>
     <% end %>
-  </section>
-</div>
-
+  
